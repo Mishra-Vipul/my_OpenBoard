@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <title>OpenBoard Clone</title>
+</head>
+<body>
+    <div class="options-cont">
+        <i class="fa-solid fa-bars"></i>
+    </div>
+    <div class="tools-cont scale-tools">
+        <img class="pencil-Tool" src="Icons/pencil-svgrepo-com.svg" >
+        <img class="eraser-Tool" src="Icons/eraser-svgrepo-com.svg" >
+        <img class="download-Tool" src="Icons/download-svgrepo-com.svg" >
+        <img class="upload-Tool" src="Icons/upload-svgrepo-com.svg" >
+        <img class="redo-Tool" src="Icons/redo-svgrepo-com.svg" >
+        <img class="undo-Tool" src="Icons/undo-svgrepo-com.svg" >
+        <img class="sticky" src="Icons/sticky-note-svgrepo-com.svg" >
+    </div>
+    <div class="pencil">
+        <div class="pencil-width-cont">
+            <input type="range" min="2" max="10" value="3" class="pencil-width">
+        </div>
+        <div class="pencil-color-cont">
+            <div class="black pencil-color"></div>
+            <div class="blue pencil-color"></div>
+            <div class="red pencil-color"></div>
+        </div>
+    </div>
+    <div class="eraser">
+        <input type="range" min="2" max="10" value="3" class="eraser-width">
+    </div>
+    
+    <canvas></canvas>
+    <script src="https://cdn.socket.io/3.1.3/socket.io.min.js" 
+    integrity="sha384-cPwlPLvBTa3sKAgddT6krw0cJat7egBga3DJepJyrLl4Q9/5WLra3rrnMcyTyOnh" crossorigin="anonymous"></script>
+    <script>
+        let socket = io.connect("http://localhost:3000");
+    </script>
+    <script src="./tools.js"></script>
+    <script src="./canvas.js"></script>
+</body>
+</html>
